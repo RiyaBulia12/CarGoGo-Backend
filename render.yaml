@@ -2,6 +2,8 @@ databases:
   - name: cargogo
     databaseName: cargogo
     user: cargogo
+    plan: free
+    maxmemoryPolicy: noeviction
 
 services:
   - type: web
@@ -9,6 +11,8 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
+    plan: free
+    maxmemoryPolicy: noeviction
     envVars:
       - key: DATABASE_URL
         fromDatabase:
