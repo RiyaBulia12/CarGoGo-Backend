@@ -3,7 +3,6 @@ databases:
     databaseName: cargogo
     user: cargogo
     plan: free
-    maxmemoryPolicy: noeviction
 
 services:
   - type: web
@@ -12,7 +11,6 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
     plan: free
-    maxmemoryPolicy: noeviction
     envVars:
       - key: DATABASE_URL
         fromDatabase:
